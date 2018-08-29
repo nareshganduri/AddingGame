@@ -1,0 +1,5 @@
+.progress-bar {
+    /* we need to disable the animation effect so that the timer works correctly */
+    -webkit-transition: none !important;
+    transition: none !important;
+}
