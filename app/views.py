@@ -98,7 +98,7 @@ def signup():
         if not valid:
             return render_template('signup.html', menu_items=menu_items, errors=errors)
         
-        pw_hash = bcrypt.generate_password_hash(password)
+        pw_hash = bcrypt.generate_password_hash(password).decode('utf-8')
         new_user = User(username=username, password=pw_hash)
         db.session.add(new_user)
         db.session.commit()

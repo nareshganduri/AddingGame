@@ -1,5 +1,7 @@
+import os
+
 DEBUG = True
 SECRET_KEY = 'secret'
 
-SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db'
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///app.db'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
